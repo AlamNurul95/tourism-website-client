@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Cards from './Cards';
 
 const Services = () => {
+    const [packages,setPackages]=useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:5000/packages')
+        .then(res=>res.json())
+        .then(data=>setPackages(data))
+    },[])
     return (
        
            
@@ -16,7 +22,7 @@ const Services = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-6'>
             {
-                <Cards></Cards>
+                packages.map(pack=><Cards key={pack._id} pack={pack} ></Cards>)
             }
             </div>
             </div>
