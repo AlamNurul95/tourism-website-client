@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Cards = ({pack}) => {
-    const {title,img,date}=pack;
+    const {title,img,date,_id}=pack;
     console.log(img);
     console.log(title);
 
@@ -12,7 +13,9 @@ const Cards = ({pack}) => {
     <h2 className="card-title">{title}</h2>
     <p>date:{date}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">Learn More!</button>
+      <Link to={`/book/${_id}`}>
+      <button className="btn btn-primary">Book Now</button>
+      </Link>
     </div>
   </div>
 </div>
