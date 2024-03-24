@@ -17,19 +17,19 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Home</a></li>
-      <li><a>Packages</a></li>
-      <li><a>Locations</a></li>
-      <li><a>Blog</a></li>
-      <li><a>About Us</a></li>
+      <li><Link to='/'>Home</Link></li>
+      <li><Link to='/packages'>Packages</Link></li>
+      <li><Link to='/locations'>Locations</Link></li>
+      <li><Link to='/blog'>Blog</Link></li>
+      <li><Link to='/aboutus'>About Us</Link></li>
       <li>
         <details>
           <summary>
             Customer Portal
           </summary>
           <ul className="p-2 bg-gray-500 rounded-t-none ">
-            <li><a>Registration</a></li>
-            <li><a>Login</a></li>
+            <li><Link to='/signup'>Sign Up</Link></li>
+            <li><Link to='/login'>Login</Link></li>
             </ul>
             </details>
             </li>
@@ -39,6 +39,7 @@ const Navbar = () => {
   
 </div>
     );
+    
 };
 
 export default Navbar;
