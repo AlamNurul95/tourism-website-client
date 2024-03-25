@@ -21,7 +21,22 @@ const BookNow = () => {
           price,
 
       }
-      console.log(order);
+      fetch('http://localhost:5000/booking',{
+          method:'POST',
+          headers:{
+            'content-type':'application/json'
+
+          },
+          body:JSON.stringify(order)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          console.log(data);
+          if(data.insertedId){
+            alert('Package Book Successfully')
+          }
+
+        })
       
 
     }
