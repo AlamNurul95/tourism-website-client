@@ -37,7 +37,10 @@ const Navbar = () => {
           <ul className="p-2 bg-gray-500 rounded-t-none ">
             <li><Link to='/signup'>Sign Up</Link></li>
             {
-              user?.email? <li><button onClick={handleLogout}>LogOut</button></li>
+              user?.email? <>
+              <li><button onClick={handleLogout}>LogOut</button></li>
+              <li><Link to='/mybooking'>My Booking</Link></li>
+              </>
               :
               <li><Link to='/login'>Login</Link></li>
             }
