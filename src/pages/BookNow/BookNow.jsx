@@ -4,7 +4,7 @@ import { AuthContext } from '../../provider/AuthProvider';
 
 const BookNow = () => {
     const pack=useLoaderData();
-    const {title}=pack;
+    const {title,img}=pack;
     const{user}=useContext(AuthContext);
 
     const handleBookService=event=>{
@@ -19,6 +19,7 @@ const BookNow = () => {
           date,
           email,
           price,
+          img
 
       }
       fetch('http://localhost:5000/booking',{
@@ -44,6 +45,8 @@ const BookNow = () => {
           return (
             <div>
             <h2>Book Service :{title}</h2>
+            <img src={img} alt="" srcset="" />
+
       <form onSubmit={handleBookService} className="card-body">
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
         <div className="form-control">
