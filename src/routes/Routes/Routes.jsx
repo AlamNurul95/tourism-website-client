@@ -5,6 +5,7 @@ import BookNow from "../../pages/BookNow/BookNow";
 import SignUp from "../../pages/SignUp/SignUp";
 import Login from "../../pages/Login/Login";
 import MyBooking from "../../pages/Mybooking/MyBooking";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -25,13 +26,12 @@ const router = createBrowserRouter([
         },
         {
             path:'/book/:id',
-            element:<BookNow></BookNow>,
-            loader:({params})=>fetch(`http://localhost:5000/packages/${params.id}`)
-            
+            element:<PrivateRoute><BookNow></BookNow></PrivateRoute>,
+            loader:({params})=>fetch(`http://localhost:5000/packages/${params.id}`)  
         },
         {
             path:'/mybooking',
-            element:<MyBooking></MyBooking>,
+            element:<PrivateRoute><MyBooking></MyBooking></PrivateRoute>
            
            
             
